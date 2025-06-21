@@ -1,0 +1,1388 @@
+<!-- Updated index.html content will go here -->
+<!-- Placeholder: I'll insert the modified content next -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="PjASq0mggP4GJKXkBWA1A-9uPYCUGrbwyUhVNi2d1j0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Portfolio | Futuristic Developer Showcase</title>
+    <meta name="description" content="Bibek Bista's futuristic portfolio featuring frontend projects, video edits, and real-time chat assistant.">
+    <meta name="keywords" content="Bibek Bista, portfolio, frontend developer, video editor, projects, skills">
+    <meta name="author" content="Bibek Bista">
+    <meta property="og:title" content="Bibek Bista Portfolio">
+    <meta property="og:description" content="A futuristic developer and editor showcasing projects, skills, and contact options.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="URL_TO_YOUR_SOCIAL_IMAGE.jpg">
+    <title>Cosmic Portfolio | Futuristic Developer Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Dark Theme (Default) */
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1a1a2e;
+            --text-primary: #e6e6ff;
+            --text-secondary: #b8b8d4;
+            --accent: #6e45e2;
+            --accent-light: #8a6eff;
+            --accent-dark: #4d2cb3;
+            --nav-bg: rgba(10, 10, 26, 0.8);
+            --card-bg: rgba(26, 26, 46, 0.6);
+            --particle-color: rgba(110, 69, 226, 0.5);
+            --star-color: rgba(255, 255, 255, 0.8);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f0ff;
+            --bg-secondary: #ffffff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --accent: #6e45e2;
+            --accent-light: #8a6eff;
+            --accent-dark: #4d2cb3;
+            --nav-bg: rgba(240, 240, 255, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --particle-color: rgba(110, 69, 226, 0.3);
+            --star-color: rgba(26, 26, 46, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.5s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Space Background */
+        .space-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: var(--star-color);
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar.scrolled {
+            padding: 1rem 5%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-light);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent-light);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(110, 69, 226, 0.6);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+
+        .hero-illustration {
+            position: absolute;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(30px);
+            opacity: 0.3;
+            animation: pulse 8s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 10%;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+            border-radius: 2px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(110, 69, 226, 0.3);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background-color: var(--accent-dark);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-light);
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-light);
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+            border-radius: 4px;
+            transition: width 1.5s ease;
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent-light);
+        }
+
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: var(--text-secondary);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-light);
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -0.8rem;
+            left: 0.8rem;
+            font-size: 0.8rem;
+            background-color: var(--card-bg);
+            padding: 0 0.5rem;
+            color: var(--accent-light);
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+
+        .submit-button:hover::before {
+            left: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 2rem 10%;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent-light);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(110, 69, 226, 0.5);
+            border: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-button::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: inherit;
+            animation: pulse 2s infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-window.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chatbot-header {
+            padding: 1rem;
+            background: linear-gradient(to right, var(--accent), var(--accent-dark));
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .close-chatbot {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .bot-message {
+            background-color: var(--bg-secondary);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+
+        .chatbot-input input:focus {
+            outline: none;
+        }
+
+        .send-button {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0 1rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-illustration {
+                width: 300px;
+                height: 300px;
+                right: 5%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--bg-secondary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 100px;
+            }
+
+            .hero-content {
+                align-items: center;
+            }
+
+            .hero-illustration {
+                position: relative;
+                right: auto;
+                margin-top: 3rem;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .chatbot-window {
+                width: 300px;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Space Background -->
+    <div class="space-background" id="spaceBackground"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">Bibek<span>Portfolio</span></a>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Bibek Bista Starfield</span></h1>
+            <p>A passionate frontend developerand Video Editor creating immersive digital experiences with a futuristic touch.</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+        <div class="hero-illustration"></div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1">
+                </div>
+                <div class="project-info">
+                    <h3>Github</h3>
+                    <p>GitHub is a proprietary developer platform that allows developers to create, store, manage, and share their code.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Zeem_MOD.APK</span>
+                        <span class="project-tag">BIbek-Protfolio</span>
+                        <span class="project-tag">KriBekHUB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Project 2">
+                </div>
+                <div class="project-info">
+                    <h3>Editing</h3>
+                    <p>Editing is the process that involves reviewing, organizing, correcting grammar and spelling, and formatting a piece of content.UI elements.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Bibek_EDITZ</span>
+                        <span class="project-tag">Local_Vibes06</span>
+                        <span class="project-tag">NET BASE</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3">
+                </div>
+                <div class="project-info">
+                    <h3>Nebula Portfolio</h3>
+                    <p>A responsive portfolio template with space-themed animations and dark/light mode.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">C</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>HTML/CSS</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>css</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Javascript</span>
+                        <span>5%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>OOP/POP</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>C</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>C++</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>MYSQl</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>EDITING</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Capcut</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Alight Moton Z</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Canva</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>bibekbista009.com</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+977 9764275591</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Nepalgunj-4,Banke,Nepal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder=" " required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder=" " required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="https://github.com/Bibekbista0406  "><i class="fab fa-github"></i></a>
+                <a href="#" class="https://www.facebook.com/bibek.bista.7528/"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">© 2025 Bibek Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>Bibek Assistant</h3>
+                <button class="close-chatbot" id="closeChatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Hello! I'm your Bibek assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message...">
+                <button class="send-button" id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button class="chatbot-button" id="chatbotButton">
+            <i class="fas fa-robot"></i>
+        </button>
+    </div>
+    <audio id="clickSound" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=" preload="auto"></audio>
+       <script>
+        const clickSound = document.getElementById('clickSound');
+        function playClickSound() {
+            clickSound.currentTime = 0;
+            clickSound.play();
+        }
+        document.querySelectorAll('.cta-button, .submit-button, .theme-toggle, .chatbot-button, .send-button')
+            .forEach(button => button.addEventListener('click', playClickSound));
+
+        // Animate skill bars on scroll
+        // ... Rest of your JS logic remains unchanged ...
+    </script>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        
+        // Apply the saved theme
+        if (savedTheme === 'light') {
+            body.setAttribute('data-theme', 'light');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Space Background Animation
+        const spaceBackground = document.getElementById('spaceBackground');
+        const starCount = 100;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random size between 1px and 3px
+            const size = Math.random() * 2 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            // Random position
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            
+            // Random animation duration between 2s and 5s
+            const duration = Math.random() * 3 + 2;
+            star.style.setProperty('--duration', `${duration}s`);
+            
+            spaceBackground.appendChild(star);
+        }
+
+        // Add some larger stars (particles)
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('star');
+            
+            // Larger size between 2px and 4px
+            const size = Math.random() * 2 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Random position
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            
+            // Longer animation duration between 4s and 8s
+            const duration = Math.random() * 4 + 4;
+            particle.style.setProperty('--duration', `${duration}s`);
+            
+            // Add some color variation
+            const hue = 260 + Math.random() * 40; // Purple/blue hues
+            particle.style.backgroundColor = `hsla(${hue}, 80%, 70%, 0.7)`;
+            
+            spaceBackground.appendChild(particle);
+        }
+
+        // Chatbot Functionality
+        const chatbotButton = document.getElementById('chatbotButton');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const closeChatbot = document.getElementById('closeChatbot');
+        const sendMessage = document.getElementById('sendMessage');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+
+        // Simple FAQ responses
+        const faqResponses = {
+            'hello': 'Hello there! How can I assist you today?',
+            'hi': 'Hi! Welcome to the cosmic portfolio. What would you like to know?',
+            'projects': 'The projects section showcases my latest work. You can find details about Galaxy Dashboard, Quantum Chat, and Nebula Portfolio there.',
+            'skills': 'I specialize in frontend development with React, JavaScript, and modern CSS. Check the skills section for a detailed breakdown.',
+            'contact': 'You can reach me via email at alex@cosmicportfolio.com or through the contact form on this website.',
+            'default': "I'm sorry, I didn't understand that. Try asking about 'projects', 'skills', or 'contact' information."
+        };
+
+        chatbotButton.addEventListener('click', () => {
+            chatbotWindow.classList.toggle('active');
+        });
+
+        closeChatbot.addEventListener('click', () => {
+            chatbotWindow.classList.remove('active');
+        });
+
+        function addBotMessage(text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', 'bot-message');
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function addUserMessage(text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', 'user-message');
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function processUserInput() {
+            const userMessage = chatbotInput.value.trim().toLowerCase();
+            if (!userMessage) return;
+            
+            addUserMessage(userMessage);
+            chatbotInput.value = '';
+            
+            // Simulate typing indicator
+            setTimeout(() => {
+                let response = faqResponses.default;
+                
+                // Check if any FAQ keyword matches
+                for (const [keyword, reply] of Object.entries(faqResponses)) {
+                    if (userMessage.includes(keyword)) {
+                        response = reply;
+                        break;
+                    }
+                }
+                
+                addBotMessage(response);
+            }, 500);
+        }
+
+        sendMessage.addEventListener('click', processUserInput);
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                processUserInput();
+            }
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            console.log('Form submitted:', { name, email, subject, message });
+            
+            // Show a success message
+            alert('Thank you for your message! I will get back to you soon.');
+            
+            // Reset the form
+            contactForm.reset();
+            
+            // Reset the floating labels
+            document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+                input.nextElementSibling.style = '';
+            });
+        });
+
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        function animateSkillBars() {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Use Intersection Observer to animate skills when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('#skills').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Project card tilt effect
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const angleX = (y - centerY) / 20;
+                const angleY = (centerX - x) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
