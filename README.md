@@ -19,7 +19,7 @@ SEO Keywords: bibekbista04 github, Bibek Bista portfolio, futuristic portfolio t
 </p>
 
 <p align="center">
-  <a href="https://bibekbista04.vercel.app" target="_blank">🌐 Live Demo</a> |
+  <a href="https://bibekbista0406.github.io/bibekbista04-Portfolio-Template/" target="_blank">🌐 Live Demo</a> |
   <a href="https://github.com/Bibekbista0406/bibekbista04.git">🗂️ Source Code</a> |
   <a href="#📦-features">✨ Features</a> |
   <a href="#🚀-getting-started">🚀 Getting Started</a>
